@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShotgunShooting : MonoBehaviour
 {
+    [SerializeField] private LayerMask _layersToShoot = 0;
+
     //Gun stats
     public int damage;
 
@@ -30,6 +32,9 @@ public class ShotgunShooting : MonoBehaviour
     public Camera _camera;
     public Transform attackPoint;
     public RaycastHit rayHit;
+
+    //Audio
+    [SerializeField] private AudioSource _shootSound;
 
     private void Awake()
     {
@@ -70,9 +75,6 @@ public class ShotgunShooting : MonoBehaviour
         //Calculate direction of spread
         Vector3 direction = _camera.transform.forward + new Vector3(x, y, 0);
 
-        Debug.DrawRay(_camera.transform.position, direction * range, Color.cyan, 1);
-
-
         bulletsLeft--;
         bulletsShot--;
 
@@ -81,7 +83,17 @@ public class ShotgunShooting : MonoBehaviour
         if (bulletsShot > 0 && bulletsLeft > 0)
             Invoke("Shoot", timeBetweenShots);
 
+        Debug.DrawRay(_camera.transform.position, direction * range, Color.cyan, 1);
+        RaycastHit hitInfo;
 
+        if (Physics.Raycast(_camera.transform.position, direction, out hitInfo, range))
+        {
+            if (_shootSound != null)
+            {
+                AudioSource newSound = Instantiate(_shootSound, transform.position, Quaternion.identity);
+                Destroy(newSound.gameObject, newSound.clip.length);
+            }
+        }
     }
 
     private void Reload()
