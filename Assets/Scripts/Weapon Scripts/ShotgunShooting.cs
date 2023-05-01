@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ShotgunShooting : MonoBehaviour
 {
-    [SerializeField] private LayerMask _layersToShoot = 0;
-
     //Gun stats
     public int damage;
 
