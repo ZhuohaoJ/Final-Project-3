@@ -1049,14 +1049,14 @@ MonoBehaviour:
   damage: 0
   timeBetweenShots: 0
   bulletSpread: 0
-  range: 0
-  reloadTime: 0
-  timeBetweenShooting: 0
-  magazineSize: 0
-  bulletsPerTap: 0
-  allowButtonHold: 0
-  _camera: {fileID: 0}
-  attackPoint: {fileID: 0}
+  range: 100
+  reloadTime: 1
+  timeBetweenShooting: 0.05
+  magazineSize: 30
+  bulletsPerTap: 1
+  allowButtonHold: 1
+  _camera: {fileID: 963194227}
+  attackPoint: {fileID: 998615890}
   _shootSound: {fileID: 1162127606939393764, guid: afcfc5f3b665afb41b1ad675aec554eb, type: 3}
 --- !u!1 &963194225
 GameObject:
@@ -1170,7 +1170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 998615890}
   m_Layer: 0
-  m_Name: Muzzle
+  m_Name: Rifle Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1716,7 +1716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1817064501}
   m_Layer: 0
-  m_Name: Muzzle
+  m_Name: Shotgun Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
