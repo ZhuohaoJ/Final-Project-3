@@ -36,6 +36,7 @@ public class RifleShooting : MonoBehaviour
 
     //Audio
     [SerializeField] private AudioSource _shootSound;
+    [SerializeField] private AudioSource _reloadSound;
 
     private void Awake()
     {
@@ -107,6 +108,12 @@ public class RifleShooting : MonoBehaviour
         Invoke("ReloadFinished", reloadTime);
 
         _uiManager.UpdateAmmo(bulletsLeft);
+
+        if (_reloadSound != null)
+        {
+            AudioSource newSound = Instantiate(_reloadSound, transform.position, Quaternion.identity);
+            Destroy(newSound.gameObject, newSound.clip.length);
+        }
     }
 
     private void ReloadFinished()
