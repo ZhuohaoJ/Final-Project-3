@@ -7,7 +7,7 @@ public class RifleShooting : MonoBehaviour
     //Gun stats
     public int damage;
 
-    public float timeBetweenShots;
+    /*public float timeBetweenShots;*/
     public float bulletSpread;
     public float range;
     public float reloadTime;
@@ -83,8 +83,8 @@ public class RifleShooting : MonoBehaviour
 
         Invoke("ResetShot", timeBetweenShooting);
 
-        if (bulletsShot > 0 && bulletsLeft > 0)
-            Invoke("Shoot", timeBetweenShots);
+        /*if (bulletsShot > 0 && bulletsLeft > 0)
+            Invoke("Shoot", timeBetweenShots);*/
 
         Debug.DrawRay(_camera.transform.position, direction * range, Color.cyan, 1);
         RaycastHit hitInfo;
