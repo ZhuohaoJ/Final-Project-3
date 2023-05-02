@@ -1237,7 +1237,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1700,6 +1700,7 @@ GameObject:
   - component: {fileID: 1578625144}
   - component: {fileID: 1578625143}
   - component: {fileID: 1578625142}
+  - component: {fileID: 1578625146}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1790,6 +1791,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1578625146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578625141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f2a0d0782df6648a822f02e2d98dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ammoText: {fileID: 1252549952}
 --- !u!1 &1580116031
 GameObject:
   m_ObjectHideFlags: 0

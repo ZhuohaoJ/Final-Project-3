@@ -31,6 +31,9 @@ public class RifleShooting : MonoBehaviour
     public Transform attackPoint;
     public RaycastHit rayHit;
 
+    //Reference to ammo count
+    private UIManager _uiManager;
+
     //Audio
     [SerializeField] private AudioSource _shootSound;
 
@@ -38,6 +41,8 @@ public class RifleShooting : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
     private void Update()
@@ -92,12 +97,16 @@ public class RifleShooting : MonoBehaviour
                 Destroy(newSound.gameObject, newSound.clip.length);
             }
         }
+
+        _uiManager.UpdateAmmo(bulletsLeft);
     }
 
     private void Reload()
     {
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
+
+        _uiManager.UpdateAmmo(bulletsLeft);
     }
 
     private void ReloadFinished()
