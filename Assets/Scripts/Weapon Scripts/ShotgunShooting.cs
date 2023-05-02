@@ -7,7 +7,7 @@ public class ShotgunShooting : MonoBehaviour
     //Gun stats
     public int damage;
 
-    public float timeBetweenShots;
+    /*public float timeBetweenShots;*/
     public float bulletSpread;
     public float range;
     public float reloadTime;
@@ -33,6 +33,7 @@ public class ShotgunShooting : MonoBehaviour
 
     //Audio
     [SerializeField] private AudioSource _shootSound;
+    [SerializeField] private AudioSource _reloadSound;
 
     private void Awake()
     {
@@ -78,8 +79,8 @@ public class ShotgunShooting : MonoBehaviour
 
         Invoke("ResetShot", timeBetweenShooting);
 
-        if (bulletsShot > 0 && bulletsLeft > 0)
-            Invoke("Shoot", timeBetweenShots);
+        /*if (bulletsShot > 0 && bulletsLeft > 0)
+            Invoke("Shoot", timeBetweenShots);*/
 
         Debug.DrawRay(_camera.transform.position, direction * range, Color.cyan, 1);
         RaycastHit hitInfo;
@@ -98,6 +99,12 @@ public class ShotgunShooting : MonoBehaviour
     {
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
+
+        if (_reloadSound != null)
+        {
+            AudioSource newSound = Instantiate(_reloadSound, transform.position, Quaternion.identity);
+            Destroy(newSound.gameObject, newSound.clip.length);
+        }
     }
 
     private void ReloadFinished()
