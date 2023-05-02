@@ -11,6 +11,7 @@ public class ChangeWeapon : MonoBehaviour
     void Start()
     {
         _weapon1.SetActive(true);
+        _weapon2.SetActive(false);
     }
 
     // Update is called once per frame
