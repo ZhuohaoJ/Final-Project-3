@@ -1142,13 +1142,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  bulletSpread: 0.06
+  timeBetweenShots: 0
+  bulletSpread: 0
   range: 100
   reloadTime: 2
   timeBetweenShooting: 1
-  magazineSize: 25
-  bulletsPerTap: 5
-  allowButtonHold: 1
+  magazineSize: 12
+  bulletsPerTap: 1
+  allowButtonHold: 0
   _camera: {fileID: 963194227}
   attackPoint: {fileID: 1414614578}
   _shootSound: {fileID: 1162127606939393764, guid: afcfc5f3b665afb41b1ad675aec554eb, type: 3}
@@ -1184,6 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapon1: {fileID: 919103827}
   _weapon2: {fileID: 1785694511}
+  _weapon3: {fileID: 755497611}
 --- !u!4 &917324406
 Transform:
   m_ObjectHideFlags: 0
@@ -2375,7 +2377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  bulletSpread: 0.06
+  timeBetweenShots: 0
+  bulletSpread: 0.2
   range: 100
   reloadTime: 2
   timeBetweenShooting: 1
