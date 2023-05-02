@@ -1430,7 +1430,7 @@ GameObject:
   - component: {fileID: 1252549953}
   - component: {fileID: 1252549952}
   m_Layer: 5
-  m_Name: Rifle Ammo
+  m_Name: Rifle_Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1453,8 +1453,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -132.1, y: 25.3}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -90.9, y: 25.3}
+  m_SizeDelta: {x: 110, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252549952
 MonoBehaviour:
@@ -1479,17 +1479,17 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 150
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Ammo: 30'
 --- !u!222 &1252549953
 CanvasRenderer:
   m_ObjectHideFlags: 0
